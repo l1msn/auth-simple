@@ -17,6 +17,7 @@ class authController{
     }
     async getUsers(request,response){
         try {
+
         } catch (error) {
             console.log("Error of get users");
             console.log(error);
