@@ -11,23 +11,31 @@
     <div class="card">
         <div class="card-body">
             <h2>Registration</h2>
-            <form action="/registration" method="post">
+            <form action="registration" method="post">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control col-lg-9" id="name" aria-describedby="emailHelp" placeholder="Enter first name" name="name">
+                    <input type="text" class="form-control col-lg-9" required="true" id="name" aria-describedby="emailHelp" placeholder="Enter first name" name="name">
                 </div>
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control col-lg-9" id="email" aria-describedby="emailHelp" name="email" placeholder="Enter email">
+                    <input type="email" class="form-control col-lg-9" required="true" id="email" aria-describedby="emailHelp" name="email" placeholder="Enter email">
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="text" class="form-control col-lg-9" id="password" aria-describedby="emailHelp" placeholder="Enter password" name="password">
+                    <input type="text" class="form-control col-lg-9" required="true" id="password" aria-describedby="emailHelp" placeholder="Enter password" name="password">
                 </div>
 
-                <div class="form-group">
-                    <label for="info">Info</label>
-                    <textarea class="form-control" name="info" id="info" rows="3"></textarea>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="role" id="userRole" value="User" checked>
+                    <label class="form-check-label" for="userRole">
+                        User
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="role" id="adminRole" value="Admin">
+                    <label class="form-check-label" for="adminRole">
+                        Admin
+                    </label>
                 </div>
                 <p></p>
 
