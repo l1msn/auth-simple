@@ -33,7 +33,7 @@ const DB_NAME = "auth";
             await monogoose.connect(DB_URL + DB_NAME);
             app.listen(PORT, () => {
                 console.log("Server is running - http://localhost:" + PORT);
-                console.log("Start on login - http://localhost:" + PORT + "/auth/login.html");
+                console.log("Start on login - http://localhost:" + PORT + "/auth/login");
             });
         } catch (error) {
             console.log(error)
