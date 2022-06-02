@@ -2,7 +2,6 @@
 const jwt = require("jsonwebtoken");
 
 //Module require
-const secret = require("../config");
 
 //Function auth
 function roleMiddleware(roles){
@@ -15,7 +14,7 @@ function roleMiddleware(roles){
             if(!token)
                 throw new Error("No token - Not auth user now");
             console.log(token);
-            const {role: userRoles} = jwt.verify(token, secret.secretKey);
+            const {role: userRoles} = jwt.verify(token, process.env.SECRED_CODE);
             console.log(userRoles);
             let hasRole = false;
             Array.prototype.forEach.call(userRoles,(role)=>{

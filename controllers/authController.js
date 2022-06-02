@@ -5,7 +5,6 @@ const jwt = require("jsonwebtoken")
 
 //Module require
 const User = require("../models/userModel");
-const Secret = require("../config");
 
 //authController class
 class authController {
@@ -60,7 +59,7 @@ class authController {
                     id,
                     role
                 }
-                return jwt.sign(payload, Secret.secretKey, {expiresIn: "24h"});
+                return jwt.sign(payload, process.env.SECRED_CODE, {expiresIn: "24h"});
             })(user._id,user.role);
             console.log("JWT token is: ",token);
 

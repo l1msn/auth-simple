@@ -2,7 +2,6 @@
 const jwt = require("jsonwebtoken")
 
 //Module require
-const secret = require("../config")
 
 //Function auth
 function authMiddleware (request,response,next){
@@ -14,7 +13,7 @@ function authMiddleware (request,response,next){
         if(!token)
             throw new Error("No token");
         console.log(token);
-        const decode = jwt.verify(token,secret.secretKey);
+        const decode = jwt.verify(token,process.env.SECRED_CODE);
         request.user = decode;
         next();
     } catch (error) {

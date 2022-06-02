@@ -1,0 +1,27 @@
+version: '3.0'
+
+services:
+  main:
+    container_name: main
+    build:
+      context: .
+    env_file:
+      - .env
+    volumes:
+      - .:/auth-simple
+      - /auth-modules/node_modules
+    ports:
+      - 3000:3000
+    command: node server.js
+    depends_on:
+      - mongo
+    restart: always
+  mongo:
+    container_name: mongo
+    image: mongo
+    env_file:
+      - .env
+    ports:
+      - 27017:27017
+    restart: always
+
