@@ -2,6 +2,7 @@
 const express = require("express");
 const monogoose = require("mongoose");
 const bodyParser = require("body-parser")
+require("dotenv").config();
 
 //Module require
 const authRouter = require("./routes/authRoutes");
@@ -23,17 +24,22 @@ app.use("/auth", authRouter, express.static(__dirname + '/public', {
 
 //Const parameters
 const PORT = process.env.PORT || 3000;
-const DB_URL = "mongodb://localhost:27017/";
-const DB_NAME = "auth";
+const DB_URI = ("mongodb://" + process.env.MONGO_HOST
+    + ":" + process.env.MONGO_PORT + "/" + process.env.MONGO_NAME)
+        || ("mongodb://127.0.0.1:27017/auth");
 
 
 //Start Server
 (async () => {
         try {
-            await monogoose.connect(DB_URL + DB_NAME);
+            await monogoose.connect(DB_URI,
+                {
+                    useNewUrlParser: true
+                }
+            );
             app.listen(PORT, () => {
                 console.log("Server is running - http://localhost:" + PORT);
-                console.log("Start on login - http://localhost:" + PORT + "/auth/login.html");
+                console.log("Start on login - http://localhost:" + PORT + "/auth/login");
             });
         } catch (error) {
             console.log(error)
