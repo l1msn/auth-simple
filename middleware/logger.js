@@ -1,5 +1,11 @@
 const fs = require("fs");
-
+/**
+ * @description - логгер запросв
+ * @function
+ * @param request - запрос
+ * @param response - ответ
+ * @param next - следушая функция middleware
+ */
 const logger = (request,response,next)=>{
     let now = new Date();
     let hour = now.getHours();
@@ -10,5 +16,5 @@ const logger = (request,response,next)=>{
     fs.appendFile("server.log", data + "\n", function(){});
     next();
 };
-
+//Экспортируем данный модуль
 module.exports = logger;

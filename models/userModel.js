@@ -1,15 +1,25 @@
-//Lib require
+//Инициализация библиотек
 const mongoose = require("mongoose");
 
+//Инициализация модулей
 
-
-//Scheme User
+//Схема пользователя
+/**
+ * @description - Схема пользователя
+ * @scheme
+ * @type {Model<T & Document<any, any, any>>}
+ */
 const User = mongoose.model('User',
     new mongoose.Schema({
+        //Имя
         name: { type: String, required: true },
+        //Почта
         email: { type: String, required: true, unique: true },
+        //Пароль
         password: { type: String, required: true },
+        //Роль
         role: { type: String, enum: ['Admin', 'User'], required: true },
+        //Дата создания
         createDate: { type: String, default:
                 (new Intl.DateTimeFormat("ru", {dateStyle: "short", timeStyle: "short"}).format(new Date()))
         }
@@ -18,5 +28,5 @@ const User = mongoose.model('User',
     })
 );
 
-//Export User
+//Экспортируем данный модуль
 module.exports = User;

@@ -1,15 +1,16 @@
-//Lib require
+//Инициализация библиотек
 const router = require("express");
 const validator = require("express-validator");
 
-//Module require
+//Инициализация модулей
 const authController = require("../controllers/authController");
 const authMiddleware = require("../middleware/authMiddleware");
-const roleMiddleware = require("../middleware/roleMiddleware")
-//Init authRouter
+const roleMiddleware = require("../middleware/roleMiddleware");
+//Инициализируем Роутрер
 const authRouter = new router();
 
-//authRouter request
+//Запросы Роутера
+//URL, Валидация, Контроллер управления
 authRouter.post("/registration",[
     validator.check("name","Name must not empty").notEmpty(),
     validator.check("email","Email must not empty").notEmpty(),
@@ -23,5 +24,5 @@ authRouter.post("/login",[
 
 authRouter.get("/users",roleMiddleware("Admin"),authController.getUsers);
 
-//Export
+//Экспортируем данный модуль
 module.exports = authRouter;
