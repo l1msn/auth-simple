@@ -29,7 +29,7 @@ Authoriaztion: "Bearer <ваш jwt token>"
 > Если пользователь имеет права доступа Admin, то ему будут доступны некоторые дополнительные возможности - получение всех пользователей.
 
 # Инструменты разработки
-> ### Стек:
+> ## Стек:
 > - [Node.js](https://nodejs.org/en/)
 > - [Express](http://expressjs.com)
 > - [MongoDB](https://www.mongodb.com)
@@ -37,7 +37,7 @@ Authoriaztion: "Bearer <ваш jwt token>"
 > - [Postman](https://www.postman.com)
 > - [Docker](https://www.docker.com) (если Вы планируете поднимать в контейнере)
  
-> ### Основные зависимости:
+> ## Основные зависимости:
 > - [mongoose](https://mongoosejs.com)
 > - [bcrypt](https://www.npmjs.com/package/bcrypt)
 > - [jwt](https://www.npmjs.com/package/jsonwebtoken)
@@ -91,7 +91,7 @@ Authoriaztion: "Bearer <ваш jwt token>"
 >
 > > 6. Для остановки нажмите Ctrl+C и подождите
 
-## API Reference
+## API
 
 #### Регистрация
 
