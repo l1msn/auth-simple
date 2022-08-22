@@ -1,14 +1,16 @@
 # auth-simple
-### *Простой пример аутентификации/регистрации с помощью bcrypt/jwt на MongoDB/JS*
+### *Простой шаблон аутентификации/регистрации с помощью bcrypt/jwt на MongoDB/JS*
 Содержание:
-- [Цель проекта](https://github.com/l1msn/auth-simple/new/master?readme=1#%D1%86%D0%B5%D0%BB%D1%8C-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0)
-- [Инструменты разработки](https://github.com/l1msn/auth-simple/new/master?readme=1#%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8)
-  - [Стек](https://github.com/l1msn/auth-simple/new/master?readme=1#%D1%81%D1%82%D0%B5%D0%BA)
-  - [Основные зависимости](https://github.com/l1msn/auth-simple/new/master?readme=1#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5-%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8)
-- [Старт работы](https://github.com/l1msn/auth-simple/new/master?readme=1#c%D1%82%D0%B0%D1%80%D1%82-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B)
-  - [C docker в контейнере](https://github.com/l1msn/auth-simple/new/master?readme=1#c-docker-%D0%B2-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B5)
-  - [Без docker на локальной машине](https://github.com/l1msn/auth-simple/new/master?readme=1#%D0%B1%D0%B5%D0%B7-docker-%D0%BD%D0%B0-%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9-%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B5)
-- [Пример работы](https://github.com/l1msn/auth-simple/new/master?readme=1#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B)
+- [Цель проекта](https://github.com/l1msn/auth-simple#цель-проекта)
+- [Инструменты разработки](https://github.com/l1msn/auth-simple#инструменты-разработки)
+  - [Стек](https://github.com/l1msn/auth-simple#стек)
+  - [Основные зависимости](https://github.com/l1msn/auth-simple#основные-зависимости)
+- [Старт работы](https://github.com/l1msn/auth-simple#cтарт-работы)
+  - [C docker в контейнере](https://github.com/l1msn/auth-simple#c-docker-в-контейнере)
+  - [Без docker на локальной машине](https://github.com/l1msn/auth-simple#без-docker-на-локальной-машине)
+- [API](https://github.com/l1msn/auth-simple#api)
+- [Пример работы](https://github.com/l1msn/auth-simple#пример-работы)
+- [Работы той же серии](https://github.com/l1msn/auth-simple#работы-той-же-серии)
  # Цель проекта
 > ***Реализовать*** web-приложения для аунтетификации и регистрации пользователей с определенными правами(Admin или User).
  
@@ -77,7 +79,7 @@ Authoriaztion: "Bearer <ваш jwt token>"
 >```js
 > npm install
 >```
-> > 3. Перейдите в файл [.env](https://github.com/l1msn/auth-simple/blob/master/.env) и измените значение MONGO_HOST на 127.0.0.1
+> > 3. Перейдите в файл [.env](https://github.com/l1msn/auth-simple/blob/master/.env) и измените значение MONGO_HOST на 127.0.0.1 или удобный Вам
 > >
 > > Вы также можете изменить в это конфигурационном файле все, что Вам нужно для Вашей спецификации
 >
@@ -88,6 +90,26 @@ Authoriaztion: "Bearer <ваш jwt token>"
 > > 5. В логах\консоле появяться ссылки или можете вбить их вручную
 >
 > > 6. Для остановки нажмите Ctrl+C и подождите
+
+## API Reference
+
+#### Registration
+
+```http
+  POST /auth/registration
+```
+
+#### Login
+
+```http
+  POST /auth/login
+```
+
+#### Get all users
+
+```http
+  GET /auth/users
+```
 
 # Пример работы 
 > 0. Исходный URL: http://localhost:<Ваш порт>
@@ -108,8 +130,15 @@ Authoriaztion: "Bearer <ваш jwt token>"
 >
 > ![image](https://user-images.githubusercontent.com/64272568/171846260-d586609a-2e41-4cdc-9b13-fa75396790f1.png)
 
+# Работы той же серии
+> 1. [auth-simple](https://github.com/l1msn/auth-simple) - Простой шаблон аутентификации/регистрации с помощью bcrypt/jwt на MongoDB/JS
+ 
+> 2. [auth-pro](https://github.com/l1msn/auth-pro) -Продвинутый шаблон аутентификации/регистрации с помощью bcrypt/jwt/nodemailer на MongoDB/JS в связке с ReactTS/MobX
+
+> 3. [auth-ts](https://github.com/l1msn/auth-ts) - Версия auth-pro перенесенная на TS + GraphQL/Swagger/Jest(UnitTests)/EsLint
+
 ### License
 
 [BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause)
 
-Copyright (c) 2020-present, l1msn - Sadykov Alexander
+Copyright (c) 2022 - present, l1msn - Sadykov Alexander
