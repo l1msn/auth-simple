@@ -93,19 +93,19 @@ Authoriaztion: "Bearer <ваш jwt token>"
 
 ## API Reference
 
-#### Registration
+#### Регистрация
 
 ```http
   POST /auth/registration
 ```
 
-#### Login
+#### Логин
 
 ```http
   POST /auth/login
 ```
 
-#### Get all users
+#### Получение всех пользователей
 
 ```http
   GET /auth/users
