@@ -133,7 +133,7 @@ Authoriaztion: "Bearer <ваш jwt token>"
 # Работы той же серии
 > 1. [auth-simple](https://github.com/l1msn/auth-simple) - Простой шаблон аутентификации/регистрации с помощью bcrypt/jwt на MongoDB/JS
  
-> 2. [auth-pro](https://github.com/l1msn/auth-pro) -Продвинутый шаблон аутентификации/регистрации с помощью bcrypt/jwt/nodemailer на MongoDB/JS в связке с ReactTS/MobX
+> 2. [auth-pro](https://github.com/l1msn/auth-pro) - Продвинутый шаблон аутентификации/регистрации с помощью bcrypt/jwt/nodemailer на MongoDB/JS в связке с ReactTS/MobX
 
 > 3. [auth-ts](https://github.com/l1msn/auth-ts) - Версия auth-pro перенесенная на TS + GraphQL/Swagger/Jest(UnitTests)/EsLint
 
